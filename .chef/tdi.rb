@@ -1,5 +1,3 @@
-10.times { puts "This is actually just Ruby" }
-
 user 'tdi' do
   action :create
   comment "Test Driven Infrastructure"
