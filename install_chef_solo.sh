@@ -19,6 +19,10 @@ echo "Installing wget ....."
 yum install -y wget >/dev/null 2>&1
 check_error $? "Unable to install wget"
 
+echo "Installing man...."
+yum install -y man >/dev/null 2>&1
+check_error $? "Unable to install man"
+
 echo "Adding EPEL repo ...."
 wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm >/dev/null 2>&1
 check_error $? "unable to wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm"
