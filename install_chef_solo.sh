@@ -46,3 +46,14 @@ check_error $? "Unable to install ruby ..."
 echo "Installing chef client ...."
 curl -L https://www.opscode.com/chef/install.sh | sudo bash >/dev/null 2>&1
 check_error $? "Unable to install chef...."
+
+echo "cleaning up ...."
+if [ -f "/home/vagrant/epel-release-6-8.noarch.rpm" ]; then
+  rm /home/vagrant/epel-release-6-8.noarch.rpm >/dev/null 2>&1
+  check_error $? "Unable to remove /home/vagrant/epel-release-6-8.noarch.rpm ...."
+fi
+
+if [ -f "/home/vagrant/remi-release-6.rpm" ]; then 
+  rm /home/vagrant/remi-release-6.rpm >/dev/null 2>&1
+  check_error $? "Unable to remove /home/vagrant/remi-release-6.rpm ...."
+fi
