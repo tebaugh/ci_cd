@@ -21,7 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 #chef client - workstation dev
 config.vm.define :dev do |dev_config|
-  dev_config.vm.network "private_network", ip: "192.268.1.12"
+  dev_config.vm.network "public_network", :bridge => 'en0: Ethernet'
   dev_config.vm.host_name = "dev"     
   dev_config.vm.provision "shell", path: "install_chef_solo.sh"
 end
